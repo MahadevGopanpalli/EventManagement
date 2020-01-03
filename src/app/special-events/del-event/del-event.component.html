@@ -1,0 +1,22 @@
+<p>If Event is completed then delete the Event...</p><table class="table table-sm" >
+        <thead>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>  
+          </thead>
+          <ng-container *ngFor="let s of Event">
+            <tr class="table">
+              <td>{{s.name}}</td>
+              <td>{{s.date}}</td>
+              <td>{{s.time}}</td>
+                
+            <td>
+                  
+                  <button class="btn btn-outline-danger" (click)="onDelete(s.$key)">Cancel Event</button>
+                </td>
+            </tr>
+          </ng-container>
+        </table>
+        <div class="alert alert-danger" *ngIf="showDeletedMessage">
+          Deleted event successfully from List...
+        </div>

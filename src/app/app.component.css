@@ -1,0 +1,36 @@
+body{
+    margin:0px;
+    }	
+    .header{
+            padding: 10px;
+            
+            text-align:center;
+            }
+    .header h2{
+        color:black;
+        }
+        .nav{
+        background-color:#66cd00;
+        padding:40px;
+        }
+        .nav li{
+        list-style: none;
+        display:binline-block;
+        padding: 10px;}.nav a{
+        
+        }
+        .nav ul li a:hover{
+        text-decoration:none;
+        color: #ff4040;
+        }
+        .lside
+        {
+        text-align: center;
+        float:right;
+        width:20%;
+        min-height:450px;
+        background-color:#c1cdcd;
+        }
+        .footer p{
+        color: #8b3e2f;
+        }

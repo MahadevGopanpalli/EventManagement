@@ -1,0 +1,19 @@
+
+ <div style="text-align: center;" *ngIf="ShowSpinner"><br><br><app-loading-spinner ></app-loading-spinner></div><div class="row mt-5" *ngIf='m'>
+ 
+  <div class="col-md-4 mb-3" *ngFor="let event of events">
+    <div class="card text-center">
+      
+      <div class="card-body">
+        <h5 class="card-title">{{event.name}}</h5>
+        <p class="card-text">{{event.time}}</p>
+        <a class="btn btn-primary" type="submit" role="button"(click)=Form(event.name) style="color: aliceblue;">Register</a>
+      </div>
+      <div class="card-footer text-muted">
+        {{event.date}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-form *ngIf="k" [event]="event"></app-form>

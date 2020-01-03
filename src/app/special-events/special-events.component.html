@@ -1,0 +1,60 @@
+<form class="form-inline" >
+<h2 style="text-align: center; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Admin Page</h2>
+</form>
+
+
+<div class="btn-group">
+  <label class="btn btn-primary" 
+         btnRadio="Left" tabindex="0" role="button" (click)="Event()" 
+          style="margin-right: 15px;"
+      > Add Event</label>
+  <label class="btn btn-primary" 
+         btnRadio="Middle" tabindex="0" style="margin-right: 15px;" role="button" (click)="DeleteE()">Remove Event</label>
+         <label class="btn btn-primary" 
+         btnRadio="Middle" tabindex="0" style="margin-right: 15px;" role="button" (click)="Detail()">Registrations</label>
+         <label class="btn btn-primary" 
+         btnRadio="Middle" tabindex="0" style="margin-right: 15px;" role="button" (click)="LogOut()">LogOut</label>
+      
+      
+    
+</div>
+<app-edit *ngIf="Ms"></app-edit>
+<app-del-event *ngIf="bala">
+  </app-del-event>
+  <div *ngIf="vk">
+    
+<div class="btn-group" btnRadioGroup *ngFor="let even of event">
+  <div style="text-align: center;" *ngIf="ShowSpinner"><br><br><app-loading-spinner ></app-loading-spinner></div>
+  <label class="btn btn-info" btnRadio="Left"
+         uncheckable tabindex="0" role="button" (click)='e(even.name)'>{{even.name}}</label>
+ </div>
+
+<table class="table table-sm" >
+<thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Number</th>
+    <th>Class</th>
+  </thead>
+  
+  <ng-container *ngFor="let s of student">
+    <tr class="table" *ngIf='eve(s.id)'>
+      <td>{{s.name}}</td>
+      <td>{{s.email}}</td>
+        <td>{{s.mobile}}</td>
+        <td>{{s.class}}</td>
+        <td>
+          
+          <button class="btn btn-outline-danger" (click)="onDelete(s.$key)">Cancel Addmission</button>
+        </td>
+    </tr>
+  </ng-container>
+  
+</table>
+
+<div style="text-align: center;" *ngIf='E' ><br><br><p>Click on Event Name for Details...</p><app-loading-spinner *ngIf="s" ></app-loading-spinner></div>
+</div>
+<div class="alert alert-danger" *ngIf="showDeletedMessage">
+  Deleted successfully from List...
+</div>
+
